@@ -10,8 +10,8 @@
         </Console>
 
         <RollingFile name="LogToFile"
-                     fileName="C:\\auth_course_log\\logs\\application.log"
-                     filePattern="C:\\auth_course_log\\archive\\rolling-%d{MM-dd-YYYY}.log.gz">
+                     fileName="/var/log/auth-course/application.log"
+                     filePattern="/var/log/auth-course/archive/rolling-%d{MM-dd-YYYY}.log.gz">
             <PatternLayout pattern="${LOG_PATTERN}" />
             <Policies>
                 <TimeBasedTriggeringPolicy />
