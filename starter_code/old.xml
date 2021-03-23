@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="debug" strict="true" name="XMLConfigTest"
+               packages="org.apache.logging.log4j.test">
+
+    <display-name>auth-course-logging</display-name>
+
+    <Appenders>
+        <Appender type="Console" name="STDOUT" >
+            <Layout type="PatternLayout" pattern="%d [%t] %level: %msg%n" target="ConsoleAppender.Target.SYSTEM_OUT"/><!-- class and line number -->
+            <!-- <param name="target" value="ConsoleAppender.Target.SYSTEM_OUT"/> -->
+        </Appender>
+
+        <Appender type="RollingFile" name="rolling" fileName="C:\\auth_course_log\\log\\logging.log" filePattern="C:\\auth_course_log\\rolling-%d{MM-dd-YYYY}.log.gz">
+            <Layout type="PatternLayout">
+                <Pattern>%d [%t] %level: %msg%n</Pattern>
+            </Layout>
+            <!-- <param name="filePattern" value="C:\auth_course_log\rolling-%d{MM-dd-YYYY}.log.gz" /> -->
+            <triggeringPolicy type="TimeBasedTriggeringPolicy" />
+            <!-- <triggeringPolicy type="SizeBasedTriggeringPolicy" size="10M" /> -->
+        </Appender>
+    </Appenders>
+
+    <Loggers>
+        <!-- <Logger name="org.apache.logging.log4j.test1" level="debug" additivity="false">
+            <AppenderRef ref="STDOUT"/>
+        </Logger> -->
+
+        <Logger name="com.udacity.course4.logger" level="debug" additivity="false">
+            <AppenderRef ref="rolling"/>
+        </Logger>
+
+        <Root level="trace">
+            <AppenderRef ref="rolling"/>
+        </Root>
+    </Loggers>
+
+</Configuration>

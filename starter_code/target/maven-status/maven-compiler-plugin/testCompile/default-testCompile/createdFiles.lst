@@ -1,0 +1,6 @@
+com\udacity\course4\testclasses\TestItemController.class
+com\udacity\course4\testclasses\TestCartController.class
+com\udacity\course4\testclasses\TestOrderController.class
+com\udacity\course4\ECommerceApplicationTests.class
+com\udacity\course4\helper\LoginRequest.class
+com\udacity\course4\testclasses\TestUserController.class
